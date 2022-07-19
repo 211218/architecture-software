@@ -8,7 +8,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - REPOSITORY_URI=179511205083.dkr.ecr.us-west-1.amazonaws.com/architecture_software
+      - REPOSITORY_URI=179511205083.dkr.ecr.us-west-1.amazonaws.com/architecture-software
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
@@ -29,4 +29,4 @@ phases:
 artifacts:
   files:
     - imagedefinitions.json
-    - target/architecture_software.jar
+    - target/architecture-software.jar

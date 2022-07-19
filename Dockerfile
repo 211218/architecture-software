@@ -1,3 +1,3 @@
 FROM openjdk:11
-ADD target/architecture_software.jar architecture_software.jar
-ENTRYPOINT ["java", "-jar","architecture_software.jar"]
+ADD target/architecture-software.jar architecture-software.jar
+ENTRYPOINT ["java", "-jar","architecture-software.jar"]
